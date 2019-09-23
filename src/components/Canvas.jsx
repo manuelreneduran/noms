@@ -3,7 +3,7 @@ import Item from './Item.jsx';
 
 function Canvas() {
   return (
-    <div>
+    <div id="canvas-wrapper">
       <Item/>
     </div>
   )

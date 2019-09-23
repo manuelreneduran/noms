@@ -2,7 +2,7 @@ import React from 'react';
 
 function Title() {
   return (
-    <div>
+    <div id="title">
       NOMS
     </div>
   )

@@ -2,6 +2,7 @@ import React from 'react';
 import Title from './Title.jsx';
 import Header from './Header';
 import Canvas from './Canvas.jsx';
+import '../style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="page-wrapper">
         <Title/>
         <Header/>
         <Canvas/>

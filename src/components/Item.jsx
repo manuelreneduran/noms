@@ -5,9 +5,9 @@ function Item() {
   var business = data.businesses[0];
   var address = `${business.location.address1}, ${business.location.zip_code}, ${business.location.city}`;
   return (
-    <div>
-      <div id="item-image">
-        <img src={business.image_url}></img>
+    <div id="item-wrapper">
+      <div>
+        <img id="item-image" src={business.image_url}></img>
       </div>
       <div id="item-info">
         <ul>
