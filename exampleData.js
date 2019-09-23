@@ -1,4 +1,4 @@
-{
+var exampleData = {
   "total": 8228,
   "businesses": [
     {
@@ -42,3 +42,5 @@
     }
   }
 }
+
+export default exampleData;
