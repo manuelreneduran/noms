@@ -18,6 +18,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Serve public folder
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.get('/api', (req, res) => {
+
+  console.log(req.body);
+
+
+
+})
+
 // Listen for requests
 
 module.exports = app;
