@@ -12,20 +12,32 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: null,
-      category: "food truck",
+      category: null,
       location: "austin"
     };
-
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
-    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
+    this.getData()
+    .then(response => {
+      this.setState({
+        data: response
+      })
+    })
+    .catch((err) => {
+    console.log ('error')
+    })
+  }
+
+  getData() {
+    return axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
       headers: {
         Authorization: `Bearer ${config.YELP_API_KEY}`
     },
       params: {
-      term: `food truck pizza`,
+      term: `${this.state.category}`,
       limi: 50
     }
     })
@@ -43,27 +55,35 @@ class App extends React.Component {
       console.log(data);
       return data;
     })
+  }
+
+  handleChange(e) {
+    var key = e.target.name;
+    console.log(key);
+    var value = `foodtruck, ${e.target.value}`;
+    this.setState({
+      [key]: value
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.getData()
     .then(response => {
       this.setState({
         data: response
       })
     })
-    .catch((err) => {
-    console.log ('error')
+    .catch(err => {
+      console.log("error on submit: " + err)
     })
-  }
-
-  handleChange(e) {
-    var key = e.target.name;
-    var value = e.target.value;
-    this.setState({[key]: value});
   }
 
   render() {
     return (
       <div id="page-wrapper">
         <Title/>
-        <Header handleChange={this.handleChange}/>
+        <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
         {this.state.data ? <Canvas data={this.state.data}/> : null}
       </div>
     )
