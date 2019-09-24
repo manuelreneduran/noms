@@ -3,7 +3,7 @@ import Item from './Item.jsx';
 
 
 function Canvas(props) {
-  var items = props.data.businesses.map(ele => {
+  var items = props.data.map(ele => {
     return <Item key={ele.id} business={ele}/>
   })
   return (
