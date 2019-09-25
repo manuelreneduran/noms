@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from './Title.jsx';
 import Header from './Header';
-import Canvas from './Canvas.jsx';
+import Dashboard from './Dashboard.jsx';
 import data from '../../exampleData.js';
 import '../style.css';
 import search from '../lib/searchYelp.js';
@@ -59,7 +59,7 @@ class App extends React.Component {
       <div id="page-wrapper">
         <Title/>
         <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
-        {this.state.data ? <Canvas data={this.state.data}/> : null}
+        {this.state.data ? <Dashboard data={this.state.data}/> : null}
       </div>
     )
   }

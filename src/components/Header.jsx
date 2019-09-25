@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header({handleSubmit, handleChange}) {
+function Header({ handleSubmit, handleChange }) {
   return (
     <header id="header">
       <form onSubmit={e => handleSubmit(e)}>
