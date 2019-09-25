@@ -26,7 +26,7 @@ class Modal extends React.Component {
   render() {
     var showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
     return (
-      <div  className={showHideClassName}>
+      <div className={showHideClassName}>
         <section ref={this.innerDiv} className="modal-main">
             <p>Modal</p>
             <p>Data</p>

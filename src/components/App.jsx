@@ -2,9 +2,9 @@ import React from 'react';
 import Title from './Title.jsx';
 import Header from './Header';
 import Dashboard from './Dashboard.jsx';
-import data from '../../exampleData.js';
 import '../style.css';
 import search from '../lib/searchYelp.js';
+import Spinner from './Spinner.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,25 +12,12 @@ class App extends React.Component {
     this.state = {
       data: null,
       category: null,
-      location: "austin"
+      location: "austin",
+      loading: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
-  componentDidMount() {
-    search(this.state.location, this.state.category)
-    .then(response => {
-      this.setState({
-        data: response
-      })
-    })
-    .catch((err) => {
-    console.log ('error')
-    })
-  }
-
-
 
   handleChange(e) {
     var key = e.target.name;
@@ -43,10 +30,18 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    //initiates spinner and clears dashboard
+    this.setState({
+      data: null,
+      loading: true
+    });
+
+    //makes api call
     search(this.state.location, this.state.category)
     .then(response => {
       this.setState({
-        data: response
+        data: response,
+        loading: false
       })
     })
     .catch(err => {
@@ -59,6 +54,7 @@ class App extends React.Component {
       <div id="page-wrapper">
         <Title/>
         <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+        {this.state.loading ? <Spinner/> : null}
         {this.state.data ? <Dashboard data={this.state.data}/> : null}
       </div>
     )
