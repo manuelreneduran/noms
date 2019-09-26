@@ -35,7 +35,7 @@
   border-style: solid;
   font-size: 50px;
   font-family: 'Sedgwick Ave Display', cursive;
-  color: turquoise;
+  color: white;
   margin-block-start: 0em;
   margin-block-end: 0em;
   margin-inline-start: 0px;
@@ -46,6 +46,7 @@
   -1px 1px 0 #000,
   1px 1px 0 #000;
 }
+
 
 #search-wrapper {
   border-color: orange;

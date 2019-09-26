@@ -3,6 +3,7 @@ import Dashboard from './Dashboard.jsx';
 import '../style.css';
 import Spinner from './Spinner.jsx';
 import Header from './Header.jsx';
+import search from '../lib/searchYelp.js';
 
 class App extends React.Component {
   constructor(props) {
