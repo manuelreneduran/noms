@@ -2,8 +2,10 @@ import React from 'react';
 
 function Title() {
   return (
-    <div id="title">
-      NOMS
+    <div id="title-wrapper">
+
+       <p id="title">NOMS</p>
+
     </div>
   )
 }

@@ -1,16 +1,40 @@
+.body {}
+
 #page-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border-style: solid;
   border-color: red;
+}
+
+#title-wrapper {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-color: purple;
+  border-style: solid;
+  width: 100%;
+  background-image: url('./images/migas-taco.jpg');
+  height: 500px;
 }
 
 #title {
-  font-family: 'Sedgwick Ave Display', cursive;
-  border-color: purple;
+  border-color: yellowgreen;
   border-style: solid;
+  font-size: 50px;
+  font-family: 'Sedgwick Ave Display', cursive;
+  color: turquoise;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 #header {

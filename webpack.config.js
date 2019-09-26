@@ -43,8 +43,16 @@ module.exports = env => {
         },
         {
           test: /\.(gif|png)$/,
-          use: ['file-loader']
+          use: ['file-loader'],
+        },
+        {
+          test: /\.(jpe?g|svg)$/i,
+          use: [
+            'url-loader?limit=10000',
+            'img-loader'
+          ]
         }
+
       ]
     },
     resolve: {
