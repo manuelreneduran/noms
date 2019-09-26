@@ -2,8 +2,9 @@ import React from 'react';
 import Dashboard from './Dashboard.jsx';
 import '../style.css';
 import Spinner from './Spinner.jsx';
-import Header from './Header.jsx';
+import Jumbotron from './Jumbotron.jsx';
 import search from '../lib/searchYelp.js';
+import Header from './Header.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,7 +51,8 @@ class App extends React.Component {
   render() {
     return (
       <div id="page-wrapper">
-        <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+        <Header/>
+        <Jumbotron handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
         {this.state.loading ? <Spinner/> : null}
         {this.state.data ? <Dashboard data={this.state.data}/> : null}
       </div>

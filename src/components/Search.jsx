@@ -6,7 +6,7 @@ function Search({ handleSubmit, handleChange }) {
       <form onSubmit={e => handleSubmit(e)} id="search-form">
         <input onChange={e => handleChange(e)} type="search" id="category-search" name="category" placeholder="What do you want to eat?"></input>
         {/* <input type="search" id="city-search" name="city" placeholder="City"></input> */}
-        <button>Search</button>
+        <button id="search-button"><i className="fas fa-search"></i></button>
       </form>
     </div>
   )

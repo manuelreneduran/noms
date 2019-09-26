@@ -1,11 +1,53 @@
-.body {}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0px;
+}
+
+#root {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
 
 #page-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-style: solid;
-  border-color: red;
+  width: 100%;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px;
+
+}
+
+#header-left-1 {
+
+}
+
+#header-right-1 {
+
+}
+
+.link {
+  text-decoration: none;
+  color: #0073bb;
+}
+
+.link:visited {
+  color: #0073bb;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 #title-wrapper {
@@ -13,26 +55,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-color: purple;
-  border-style: solid;
   width: 100%;
 }
 
-#header {
+#jumbotron {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-color: blue;
-  border-style: solid;
   background-image: url('./images/migas-taco.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
   height: 500px;
   width: 100%;
 }
 
 #title {
-  border-color: yellowgreen;
-  border-style: solid;
   font-size: 50px;
   font-family: 'Sedgwick Ave Display', cursive;
   color: white;
@@ -41,23 +79,25 @@
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
+  -3px -1px 0 rgb(96, 219, 85),
+  3px -1px 0 rgb(96, 219, 85),
+  -3px 1px 0 rgb(96, 219, 85),
+  3px 1px 0 rgb(96, 219, 85);
 }
 
 
 #search-wrapper {
-  border-color: orange;
-  border-style: solid;
   width: 30%;
 }
 
 #search-form {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+#search-button {
+  background-color: rgb(96, 219, 85);
 }
 
 #category-search {
