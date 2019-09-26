@@ -1,10 +1,8 @@
 import React from 'react';
-import Title from './Title.jsx';
-import Header from './Header';
 import Dashboard from './Dashboard.jsx';
 import '../style.css';
-import search from '../lib/searchYelp.js';
 import Spinner from './Spinner.jsx';
+import Header from './Header.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -51,7 +49,6 @@ class App extends React.Component {
   render() {
     return (
       <div id="page-wrapper">
-        <Title/>
         <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
         {this.state.loading ? <Spinner/> : null}
         {this.state.data ? <Dashboard data={this.state.data}/> : null}
