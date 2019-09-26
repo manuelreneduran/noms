@@ -1,8 +1,13 @@
 import React from 'react';
+import Spinner from './Spinner.jsx';
+import config from '../../config.js';
 
 class Modal extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLoading: false
+    }
     this.innerDiv = React.createRef();
   }
 
@@ -28,8 +33,11 @@ class Modal extends React.Component {
     return (
       <div className={showHideClassName}>
         <section ref={this.innerDiv} className="modal-main">
-            <p>Modal</p>
-            <p>Data</p>
+        <iframe id="map-frame"
+          frameBorder="0"
+          src={`https://www.google.com/maps/embed/v1/search?key=${config.GOOGLE_MAPS_API_KEY}&q=${this.props.businessLatitude},${this.props.businessLongitude}`}
+          allowFullScreen>
+        </iframe>
           <button onClick={this.props.handleClose}>close</button>
         </section>
       </div>

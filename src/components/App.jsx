@@ -21,8 +21,7 @@ class App extends React.Component {
 
   handleChange(e) {
     var key = e.target.name;
-    console.log(key);
-    var value = `foodtruck, ${e.target.value}`;
+    var value = `foodtrucks ${e.target.value}`;
     this.setState({
       [key]: value
     })

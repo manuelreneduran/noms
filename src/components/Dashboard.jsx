@@ -8,7 +8,9 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       show: false,
-      activeBusiness: null
+      activeBusiness: null,
+      businessLatitude: null,
+      businessLongitude: null
     };
   }
 
@@ -20,9 +22,11 @@ class Dashboard extends React.Component {
     this.setState({ show: false });
   };
 
-  setActiveBusiness = (name) => {
+  setActiveBusiness = (name, lat, long) => {
     this.setState({
-      activeBusiness: name
+      activeBusiness: name,
+      businessLatitude: lat,
+      businessLongitude: long
     }, () => {
       this.showModal();
     })
@@ -35,7 +39,8 @@ class Dashboard extends React.Component {
     return (
       <div id="canvas-wrapper">
         {items}
-        {this.state.show ? <Modal activeBusiness={this.state.activeBusiness} show={this.state.show} handleClose={this.hideModal}/> : null}
+        {this.state.show ? <Modal activeBusiness={this.state.activeBusiness} businessLatitude={this.state.businessLatitude}
+        businessLongitude={this.state.businessLongitude} show={this.state.show} handleClose={this.hideModal}/> : null}
       </div>
     )
   }

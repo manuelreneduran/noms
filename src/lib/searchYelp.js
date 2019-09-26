@@ -16,7 +16,7 @@ var searchYelp = function(loc, cat) {
     var data = response.data.businesses.filter(ele => {
       var isTruck = false;
       for (var i = 0; i < ele.categories.length; i++) {
-        if (ele.categories[i].alias === "foodtrucks") {
+        if (ele.categories[i].alias === "foodtrucks" || ele.categories[i].alias === "foodstands") {
           isTruck = true;
         }
       }
