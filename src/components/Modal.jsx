@@ -38,7 +38,6 @@ class Modal extends React.Component {
           src={`https://www.google.com/maps/embed/v1/search?key=${config.GOOGLE_MAPS_API_KEY}&q=${this.props.businessLatitude},${this.props.businessLongitude}`}
           allowFullScreen>
         </iframe>
-          <button onClick={this.props.handleClose}>close</button>
         </section>
       </div>
     );
