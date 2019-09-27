@@ -36,24 +36,16 @@ p {
 
 }
 
-#header-left-1 {
-
-}
-
-#header-right-1 {
-
-}
-
-.link {
+a {
   text-decoration: none;
   color: #0073bb;
 }
 
-.link:visited {
+a:visited {
   color: #0073bb;
 }
 
-.link:hover {
+a:hover {
   text-decoration: underline;
 }
 
@@ -188,15 +180,10 @@ hr {
   font-weight: bold;
 }
 
-#item-rating {
-
-}
-
 #item-rating-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-end;
-
   width: 50%;
   align-items: flex-start;
 
