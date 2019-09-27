@@ -1,4 +1,6 @@
 import React from 'react';
+import StarRatings from 'react-star-ratings';
+
 
 function Item({ business, setActiveBusiness }) {
   var keyCount = 0;
@@ -16,7 +18,8 @@ function Item({ business, setActiveBusiness }) {
       <div id="item-info">
         <div id="item-container-top">
           <div id="item-name-container"><p id="item-name">{business.name}</p></div>
-          <div id="item-rating-container"><p id="item-rating">{business.rating}</p></div>
+          <div id="item-rating-container"><StarRatings id="ratings" starDimension="15px" rating={business.rating}
+          starRatedColor="red" numberOfStars={5}/></div>
         </div>
 
         <div id="item-categories-container">{categories}</div>
