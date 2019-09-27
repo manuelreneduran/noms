@@ -37,11 +37,15 @@ class Dashboard extends React.Component {
       return <Item setActiveBusiness={this.setActiveBusiness} key={ele.id} business={ele}/>
     })
     return (
+      <>
+      <hr/>
       <div id="canvas-wrapper">
+
         {items}
         {this.state.show ? <Modal activeBusiness={this.state.activeBusiness} businessLatitude={this.state.businessLatitude}
         businessLongitude={this.state.businessLongitude} show={this.state.show} handleClose={this.hideModal}/> : null}
       </div>
+      </>
     )
   }
 }
