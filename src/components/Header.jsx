@@ -8,7 +8,7 @@ function Header() {
         >help fight hunger</a>
       </div>
       <div id="header-right-1">
-        <a className="link" href="#">about</a>
+        <a className="link" href="https://www.linkedin.com/in/manuel-duran-7122a9179/">about</a>
       </div>
     </header>
   )
