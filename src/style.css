@@ -186,7 +186,7 @@ hr {
   justify-content: flex-end;
   width: 50%;
   align-items: flex-start;
-
+  padding-bottom: 10px;
 }
 
 .modal {

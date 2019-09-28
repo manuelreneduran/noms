@@ -17,17 +17,16 @@ function Item({ business, setActiveBusiness }) {
       <div id="item-info">
         <div id="item-container-top">
           <div id="item-name-container"><p id="item-name">{business.name}</p></div>
-          <div id="item-rating-container">
+        </div>
+        <div id="item-rating-container">
             <StarRatings id="ratings" starDimension="15px" rating={business.rating}
           starRatedColor="red" numberOfStars={5}/>
-            <div id="reviews">
-              <a href={business.url}>
-                <p>Reviews: {business.review_count}</p>
-              </a>
-              </div>
+          <div id="reviews">
+            <a href={business.url}>
+              <p>Reviews: {business.review_count}</p>
+            </a>
           </div>
-        </div>
-
+          </div>
         <div id="item-categories-container">{categories}</div>
         <div id="item-address-container"><a className="link" onClick={e => setActiveBusiness(business.name,
           business.coordinates.latitude, business.coordinates.longitude)} href="#" id="item-address">{address}</a></div>
