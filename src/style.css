@@ -106,13 +106,37 @@ a:hover {
   width: 4%;
 }
 
+#category-search-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  background-color: white;
+}
+
 #category-search {
   padding: 9px;
   font-size: 18px;
-  line-height: 60px;
-  width: 50%;
+  width: 100%;
   border-style: none;
-  border-color: red;
+}
+
+#location-search-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  background-color: white;
+}
+
+#location-search {
+  padding: 9px;
+  font-size: 18px;
+  width: 100%;
+  border-style: none;
+  border-left: solid 2px lightgrey
 }
 
 #canvas-wrapper {
