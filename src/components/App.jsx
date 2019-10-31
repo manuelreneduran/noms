@@ -3,7 +3,7 @@ import Dashboard from './Dashboard.jsx';
 import '../style.css';
 import Spinner from './Spinner.jsx';
 import Jumbotron from './Jumbotron.jsx';
-import search from '../lib/searchYelp.js';
+import search from '../helpers/searchYelp.js';
 import Header from './Header.jsx';
 
 class App extends React.Component {
