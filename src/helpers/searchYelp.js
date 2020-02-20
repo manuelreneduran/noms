@@ -1,10 +1,9 @@
-import config from '../../config.js';
 import axios from 'axios';
 
 var searchYelp = function(loc, cat) {
   return axios.get(`${'https://evening-coast-30388.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${loc}`, {
     headers: {
-      Authorization: `Bearer ${config.YELP_API_KEY}`
+      Authorization: `Bearer ${process.env.YELP_API_KEY}`
   },
     params: {
     term: `${cat}`,
