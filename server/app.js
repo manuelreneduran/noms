@@ -18,7 +18,7 @@ app.use(parser.urlencoded({ extended: false }));
 app.post('/yelp', (req, res) => {
   const loc = req.body.loc;
   const cat = req.body.cat;
-  axios.get(`https://api.yelp.com/v3/businesses/search?location=${loc}`, {
+  return axios.get(`https://api.yelp.com/v3/businesses/search?location=${loc}`, {
     headers: {
       Authorization: `Bearer ${process.env.YELP_API_KEY}`
   },
