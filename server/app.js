@@ -18,6 +18,7 @@ app.use(parser.urlencoded({ extended: false }));
 app.post('/yelp', (req, res) => {
   const loc = req.body.loc;
   const cat = req.body.cat;
+  console.log("gets to post")
   return axios.get(`https://api.yelp.com/v3/businesses/search?location=${loc}`, {
     headers: {
       Authorization: `Bearer ${process.env.YELP_API_KEY}`
@@ -28,6 +29,8 @@ app.post('/yelp', (req, res) => {
   }
   })
   .then((response) => {
+    console.log("gets to response")
+
       if (response.status !== 200) {
         res.status(response.status);
       } else {
