@@ -1,15 +1,8 @@
 import axios from 'axios';
 
 var searchYelp = function(loc, cat) {
-  return axios.get(`https://api.yelp.com/v3/businesses/search?location=${loc}`, {
-    headers: {
-      Authorization: `Bearer ${process.env.YELP_API_KEY}`
-  },
-    params: {
-    term: `${cat}`,
-    limi: 50
-  }
-  })
+  const data = { loc, cat };
+  return axios.post('/yelp', data)
   .then((response) => {
     //filter out non-food-trucks
     var data = response.data.businesses.filter(ele => {
