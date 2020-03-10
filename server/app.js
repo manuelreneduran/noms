@@ -16,7 +16,6 @@ app.use(parser.urlencoded({ extended: false }));
 
 
 app.post('/yelp', (req, res) => {
-  console.log(req.body);
   const loc = req.body.loc;
   const cat = req.body.cat;
   axios.get(`https://api.yelp.com/v3/businesses/search?location=${loc}`, {
@@ -35,6 +34,9 @@ app.post('/yelp', (req, res) => {
       } else {
         res.status(200).send(response.data);
       }
+    })
+    .catch(err => {
+      console.log(err);
     })
 });
 
