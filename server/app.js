@@ -30,14 +30,13 @@ app.post('/yelp', (req, res) => {
   .then((response) => {
       if (response.status !== 200) {
         res.status(response.status);
-        return;
       } else {
+        console.log("works");
         res.status(200).send(response.data);
       }
     })
-    .catch(err => {
-      console.log(err);
-    })
+  .catch(err => {
+  })
 });
 
 
