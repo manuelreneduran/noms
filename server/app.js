@@ -3,8 +3,9 @@ const parser = require("body-parser");
 const path = require('path');
 const app = express();
 const axios = require('axios');
+const cors = require('cors');
 
-
+app.use(cors());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
