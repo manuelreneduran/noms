@@ -1,6 +1,5 @@
 import React from 'react';
 import Spinner from './Spinner.jsx';
-import config from '../../config.js';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -35,7 +34,7 @@ class Modal extends React.Component {
         <section ref={this.innerDiv} className="modal-main">
         <iframe id="map-frame"
           frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/search?key=${config.GOOGLE_MAPS_API_KEY}&q=${this.props.businessLatitude},${this.props.businessLongitude}`}
+          src={`https://www.google.com/maps/embed/v1/search?key=${process.env.GOOGLE_MAPS_API_KEY}&q=${this.props.businessLatitude},${this.props.businessLongitude}`}
           allowFullScreen>
         </iframe>
         </section>
