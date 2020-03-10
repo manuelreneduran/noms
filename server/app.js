@@ -1,15 +1,44 @@
 const express = require('express');
-const bodyParser = require("body-parser");
+const parser = require("body-parser");
 const path = require('path');
 const app = express();
-const cors = require('cors');
+const axios = require('axios');
 
-// Allow CORS
-app.use(cors());
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 // Parse all requests
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: false }));
+
+
+app.post('/yelp', (req, res) => {
+  console.log(req.body);
+  const loc = req.body.loc;
+  const cat = req.body.cat;
+  axios.get(`https://api.yelp.com/v3/businesses/search?location=${loc}`, {
+    headers: {
+      Authorization: `Bearer ${process.env.YELP_API_KEY}`
+  },
+    params: {
+    term: `${cat}`,
+    limi: 50
+  }
+  })
+  .then((response) => {
+      if (response.status !== 200) {
+        res.status(response.status);
+        return;
+      } else {
+        res.status(200).send(response.data);
+      }
+    })
+});
+
+
 
 // Serve public folder
 app.use(express.static(path.join(__dirname, '../public')));
