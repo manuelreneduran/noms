@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+//
 var searchYelp = function(loc, cat) {
   const data = { loc, cat };
   return axios.post('/yelp', data)
